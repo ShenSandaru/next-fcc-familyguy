@@ -1,3 +1,12 @@
+/**
+ * Root layout component for the Family Guy app.
+ *
+ * @component
+ * @param {Object} props - The component props.
+ * @param {ReactNode} props.children - The child components.
+ * @returns {JSX.Element} The rendered root layout.
+ */
+
 import './globals.css'
 import { Inter } from 'next/font/google'
 import { Navigation } from '@/components'
@@ -15,7 +24,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <Navigation />
         {children}
-      </body>
+        </body>
     </html>
   )
 }

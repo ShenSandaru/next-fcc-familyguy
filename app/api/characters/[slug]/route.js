@@ -1,18 +1,10 @@
-/**
- * Retrieves a character and their associated quotes based on the provided slug.
- *
- * @param {Object} req - The request object.
- * @param {Object} params - The route parameters.
- * @param {string} params.slug - The slug of the character.
- *
- * @returns {Promise<Object>} A promise that resolves to an object containing the character and their quotes, or an error response.
- */
-
 import characters from '@/data/characters.json'
 import quotes from '@/data/quotes.json'
 import { NextResponse } from 'next/server'
 
-export async function GET(req, { params }) {
+export async function GET(req, context) {
+  const { params } = context
+
   try {
     const character = characters.data.find(item => item.slug === params.slug)
     if (!character) {
